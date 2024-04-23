@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link rel="stylesheet" href="register.css">
+    <!-- Include a library for better input handling (optional) -->
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.registration-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    background-color: #00A79D; /* This sets the background color */
+    color: white; /* This will set the text color to white to ensure it's readable */
+    text-transform: uppercase;
+    padding: 20px 0; /* Add padding to give some space around the text */
+     /* Round the top corners to match the container */
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #0b0b0b;
+    font-size: 13px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="file"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #dee2e6;
+    border-radius: 0;
+    color: #495057;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.form-group input[type="file"] {
+    padding: 0;
+}
+
+.register-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    box-shadow: none;
+}
+
+.register-btn:hover {
+    background-color: #138496;
+}
+
+.courses-container {
+    margin-bottom: 20px;
+}
+
+.course-entry {
+    position: relative;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.course-entry input[type="text"] {
+    display: block;
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #495057;
+}
+
+.add-course-btn {
+    padding: 10px 15px;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.add-course-btn:hover {
+    background-color: #138496;
+}
+
+.remove-course-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.remove-course-btn:hover {
+    background-color: #bd2130;
+}
+
+.remove-course-btn i {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .course-entry input[type="text"] {
+        width: calc(100% - 20px);
+    }
+}
+
+/* Additional CSS for the back button */
+.back-btn {
+    position: absolute;
+    top: 20px; /* Adjust as needed for your layout */
+    left: 20px; /* Adjust as needed for your layout */
+    padding: 10px 15px;
+    background-color: #00A79D; /* Same color as the form button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust as needed */
+    text-align: center;
+    line-height: 1; /* Centers the icon vertically */
+    z-index: 10; /* Ensures the button is above other elements */
+}
+
+.back-btn:hover {
+    background-color: #138496; /* Darker shade for hover effect */
+}
+
+.back-btn i {
+    margin-right: 5px; /* Gives some space next to the arrow icon */
+}
+
+/* Success modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100; /* Above everything else */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    border-radius: 8px; /* Optional: for rounded corners */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* The Continue Button */
+.continue-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    margin: 15px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    border-radius: 4px;
+}
+
+.continue-btn:hover {
+    background-color: #45a049;
+}
+
+/* The checkmark symbol */
+.checkmark {
+    color: #4CAF50; /* Green */
+    font-size: 50px; /* Large checkmark */
+}
+
+
+    </style>
+</head>
+<body>
+    <button onclick="location.href='index.html'" class="back-btn">
+        <i class="fa fa-arrow-left"></i>
+    </button>
+    <!-- Success box, hidden by default -->
+<div id="success-modal" class="modal">
+    <div class="modal-content">
+        <span class="checkmark">&#10004;</span>
+        <h3>Success!</h3>
+        <p>Thanks for Registration . We're sending you a confirmation email.</p>
+        <button id="continue-button" class="continue-btn">CONTINUE</button>
+    </div>
+</div>
+
+    <div class="registration-container">
+        <h2>College Registration Form</h2>
+        
+        <form action="submit_college_info.php" method="post" enctype="multipart/form-data" class="registration-form">
+            <div class="form-group">
+                <label for="collegeName">College Name:</label>
+                <input type="text" id="collegeName" name="collegeName" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="about">About the College:</label>
+                <textarea id="about" name="about" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="collegeImage">College Image:</label>
+                <input type="file" id="collegeImage" name="collegeImage" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="contactNo">Contact Number:</label>
+                <input type="tel" id="contactNo" name="contactNo" required>
+            </div>
+            <div class="form-group courses-container">
+                <label>Courses Offered:</label>
+                <div class="course-entry">
+                    <input type="text" name="courses[name][]" placeholder="Course Name" required>
+                    <input type="text" name="courses[duration][]" placeholder="Duration" required>
+                    <input type="text" name="courses[fees][]" placeholder="Fees" required>
+                    <!-- Remove button -->
+                    <button type="button" class="remove-course-btn"><i class="fa fa-times"></i></button>
+                </div>
+                <button type="button" onclick="addCourse()" class="add-course-btn">Add Another Course</button>
+            </div>
+            <div class="form-group">
+                <label for="county">County:</label>
+                <input type="text" id="county" name="county" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="typeOfCollege">Type of College:</label>
+                <select id="typeOfCollege" name="typeOfCollege" required>
+                    <option value="Engineering">Engineering</option>
+                    <option value="MBA">MBA</option>
+                    <option value="Pharmacy">Pharmacy</option>
+                    <option value="MCA">MCA</option>
+                    <option value="BCA">BCA</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="register-btn">Register</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        function createRemoveButton(courseEntry) {
+            var removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.classList.add('remove-course-btn');
+            removeButton.innerHTML = '<i class="fa fa-times"></i>';
+            removeButton.onclick = function() {
+                // Remove the course entry when the button is clicked
+                courseEntry.remove();
+            };
+            return removeButton;
+        }
+    
+        function addCourse() {
+            var container = document.querySelector('.courses-container');
+            var originalCourseEntry = document.querySelector('.course-entry');
+            var newCourseEntry = originalCourseEntry.cloneNode(true);
+    
+            // Clear the values in the cloned inputs
+            var inputs = newCourseEntry.querySelectorAll('input');
+            inputs.forEach(function(input) {
+                input.value = '';
+            });
+    
+            // Append remove button to the new course entry
+            newCourseEntry.appendChild(createRemoveButton(newCourseEntry));
+    
+            container.appendChild(newCourseEntry);
+        }
+    
+        // Bind remove functionality to all existing course entries, including the first
+        document.addEventListener('DOMContentLoaded', function() {
+            var existingCourseEntries = document.querySelectorAll('.course-entry');
+            existingCourseEntries.forEach(function(entry) {
+                // Do not add another remove button if it already exists
+                if (!entry.querySelector('.remove-course-btn')) {
+                    entry.appendChild(createRemoveButton(entry));
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.querySelector('.registration-form');
+            form.onsubmit = function(e) {
+                e.preventDefault(); // Prevent the actual form submission
+    
+                // Create a FormData object to send the form data
+                var formData = new FormData(form);
+    
+                // Send data to the server with fetch API
+                fetch('submit_college_info.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    console.log(data); // You can handle a redirect here if needed
+                    // Show the success modal
+                    document.getElementById('success-modal').style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            };
+    
+            // Redirect to home page when the continue button is clicked
+            document.getElementById('continue-button').onclick = function() {
+                window.location.href = 'index.php';
+            };
+        });
+    </script>
+    
+    
+    
+    
+    
+    
+</body>
+</html>

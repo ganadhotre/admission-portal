@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    color: #495057;
+}
+.registration-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #d9e6ec;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.registration-form h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+    color: #17a2b8;
+    text-transform: uppercase;
+}
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #17a2b8;
+    font-size: 13px;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="file"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #dee2e6;
+    border-radius: 0;
+    color: #495057;
+    font-size: 14px;
+}
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+.form-group input[type="file"] {
+    padding: 0;
+}
+.register-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    box-shadow: none;
+}
+.register-btn:hover {
+    background-color: #138496;
+}
+.courses-container {
+    margin-bottom: 20px;
+}
+
+.course-entry {
+    margin-bottom: 10px;
+}
+
+.course-entry input[type="text"] {
+    display: block; /* Makes input take full width */
+    width: calc(100% - 20px); /* Adjust width, considering padding */
+    margin-bottom: 10px; /* Spacing between fields */
+    padding: 10px;
+    border: 1px solid #dee2e6; /* Light grey border */
+    border-radius: 4px;
+    font-size: 14px;
+    color: #495057;
+}
+
+.add-course-btn {
+    padding: 10px 15px;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.add-course-btn:hover {
+    background-color: #138496;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .course-entry input[type="text"] {
+        width: calc(100% - 20px); /* Adjust the width on smaller screens */
+    }
+}

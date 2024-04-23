@@ -1,0 +1,409 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Top Bar Styles */
+.top-bar {
+    background-color: #00A79D;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.contact-info {
+    display: flex; /* This will align items in a row */
+    align-items: center; /* This will vertically center the items */
+    gap: 10px; /* Adds space between items */
+}
+.auth-links a {
+    color: white; /* Set the color of the text to white */
+    text-decoration: none; /* Removes the underline from links */
+}
+
+.contact-info .auth-links {
+    margin-left: auto; /* This will push the auth links to the right */
+    white-space: nowrap; /* Prevents wrapping on small screens */
+    
+}
+
+/* Optional: Style for icons */
+.fa-phone, .fa-envelope {
+    margin-right: 0.5em; /* Adds a bit of margin to the right of the icons */
+}
+
+
+
+
+/* Navigation Bar Styles */
+.main-nav {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 10px;
+}
+.main-nav .logo img {
+    width: 50px; /* Width of the logo */
+    height: 50px; /* Height of the logo */
+    display: block; /* To prevent inline default spacing */
+    margin-bottom: 5px;
+}
+
+
+.main-nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav .logo img {
+    margin-right: 10px;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin: 0 10px;
+}
+
+.main-nav ul li a {
+    color: rgb(4, 4, 4);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.main-nav .cta-button a {
+    background-color: #FF5733;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .main-nav ul li a {
+        text-align: center;
+        padding: 10px;
+    }
+    .cta-button a {
+        display: block;
+        text-align: center;
+        margin-top: 5px;
+        width: 70%;
+    }
+}
+
+.contact-info i {
+    margin-right: 5px;
+    color: white; /* Set the color to match your design */
+}
+
+
+/* Social Media Icons Styling */
+.social-media-icons a {
+    text-decoration: none;
+    color: #333; /* Icon color */
+    background-color: #ffffff; /* White background color for the icons */
+    border-radius: 50%; /* Makes the background circle */
+    display: inline-block;
+    width: 40px; /* Width of the circle */
+    height: 40px; /* Height of the circle */
+    line-height: 40px; /* Centers the icon vertically */
+    text-align: center; /* Centers the icon horizontally */
+    margin: 0 5px; /* Spacing between icons */
+    -webkit-transition: background-color 0.3s; /* Smooth transition for hover effect */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.social-media-icons a:hover {
+    background-color: #eee; /* Lighter background on hover */
+}
+
+/* Ensure Font Awesome icons are centered within the circle */
+.social-media-icons i {
+    vertical-align: middle;
+}
+
+/* Adjust this as needed to position your social media icons */
+.social-media-icons {
+    position: absolute;
+    top: 10px; /* Distance from the top of the viewport */
+    right: 10px; /* Distance from the right of the viewport */
+}
+
+
+
+.hero-section {
+    position: relative; /* Relative positioning for the overlay content */
+    background-image: url('img2.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire section with the image */
+    background-position: center; /* Center the image in the section */
+    height: 300px; /* Set to the height of your image or desired section height */
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+}
+
+.hero-content {
+    text-align: center; /* Center text for smaller screens */
+    color: white; /* Text color */
+    max-width: 500px; /* Maximum width of the content */
+}
+
+.hero-section h1 {
+    font-size: 2.5em; /* Large font size for the main title */
+    margin-bottom: 0.5em;
+}
+
+.hero-section p {
+    margin-bottom: 1em;
+}
+
+.hero-button {
+    background-color: #00A79D; /* Background color of the button */
+    color: white; /* Text color of the button */
+    text-decoration: none; /* Remove underline from link */
+    padding: 10px 20px; /* Padding inside the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners for the button */
+    font-weight: bold; /* Bold font for the button text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: auto; /* Auto height for smaller screens */
+    }
+
+    .hero-content {
+        padding: 20px; /* Padding for smaller screens */
+    }
+}
+/* Card*/
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows multiple rows */
+    justify-content: flex-start; /* Aligns cards to the start of the container */
+    gap: 20px; /* Provides space between the cards */
+    padding: 20px; /* Padding around the container */
+}
+
+.card {
+    flex: 0 1 calc(33.33% - 20px); /* Each card will take up a third of the container width minus the gap */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Adds shadow for better visibility */
+    margin-bottom: 20px; /* Space between rows if needed */
+    padding: 10px; /* Padding inside the card */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.card img {
+    width: 100%; /* Makes image responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Removes bottom space/gap */
+}
+
+.card h3 {
+    text-align: center; /* Center-aligns the text */
+    margin-top: 10px; /* Space above the title */
+}
+
+
+
+.course-title {
+    margin-bottom: .5em; /* Space between title and meta information */
+    font-size: 1.2em; /* Adjust size as needed */
+}
+
+.course-meta {
+    font-size: .9em; /* Smaller text for meta information */
+    color: #666; /* Lighter text color for meta */
+}
+
+.fa-play-circle, .fa-users {
+    margin-right: .5em; /* Space between icons and text */
+}
+
+
+.search-box-section {
+    padding: 20px;
+    text-align: center; /* Center the search form on the page */
+}
+
+.search-form {
+    display: inline-block; /* Align form elements horizontally */
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-right: 10px; /* Add space between form elements */
+    display: inline-block; /* Align form elements horizontally */
+}
+
+.form-group label {
+    margin-right: 5px;
+}
+
+.form-group select,
+.form-group input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Rounded corners for inputs and selects */
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Make the cursor a pointer when hovering over the button */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design for Form */
+@media (max-width: 768px) {
+    .search-form {
+        display: block; /* Stack form elements vertically on smaller screens */
+    }
+    
+    .form-group {
+        display: block;
+        margin: 10px 0; /* Add space between stacked form elements */
+    }
+}
+
+
+/* search */
+
+.search-container {
+    background-color: #00A79D; /* Example background color */
+    padding: 20px;
+    text-align: center; /* Center the title and form */
+}
+
+.search-title {
+    color: white;
+    margin-bottom: 20px; /* Space between the title and the form */
+}
+
+.search-form {
+    display: flex;
+    justify-content: center; /* Center all items horizontally */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line */
+    gap: 10px; /* Space between items */
+}
+
+.search-filter, .search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Space between the filters/search input and next row */
+}
+
+.search-input {
+    flex-grow: 1; /* Allows the search input to grow and fill available space */
+    min-width: 250px; /* Minimum width of the search input */
+}
+
+.search-button {
+    padding: 10px 15px;
+    background-color: #007bff; /* Example button color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-button .fa-search {
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-filter, .search-input, .search-button {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .search-button {
+        width: auto;
+        padding: 10px;
+    }
+}
+
+.search-container h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+/* footer*/
+.site-footer {
+    background-color: #00A79D; /* Adjust the color to match the header's background color */
+    color: white; /* Footer text color */
+    text-align: center; /* Center the footer content */
+    padding: 20px; /* Padding inside the footer */
+    font-size: 0.8em; /* Adjust the font size as needed */
+}
+
+/* Centering <h2> inside a specific section with a class .section-title */
+.college-section h2 {
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    text-align: left;
+}
+
+
+
+
